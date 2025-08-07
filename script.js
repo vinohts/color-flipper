@@ -9,3 +9,10 @@ function getRandomHexColor() {
     document.getElementById('color').textContent = newColor;
   }
   
+  function copyColor() {
+    const colorText = document.getElementById('color').textContent;
+    navigator.clipboard.writeText(colorText).then(() => {
+      alert(`Copied: ${colorText}`);
+    });
+  }
+  

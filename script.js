@@ -15,4 +15,15 @@ function getRandomHexColor() {
       alert(`Copied: ${colorText}`);
     });
   }
-  
+  let autoInterval = null;
+
+function toggleAutoMode() {
+  if (autoInterval) {
+    clearInterval(autoInterval);
+    autoInterval = null;
+    alert("Auto mode stopped.");
+  } else {
+    autoInterval = setInterval(changeColor, 3000);
+    alert("Auto mode started: changing every 3s");
+  }
+}
